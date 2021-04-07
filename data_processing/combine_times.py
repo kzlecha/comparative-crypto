@@ -13,7 +13,6 @@ for file_ending in file_endings:
     list_data = []
 
     for filename in [name for name in file_list if file_ending in name]:
-        print(filename)
 
         filepath = dir_path + filename
         df = read_csv(filepath)

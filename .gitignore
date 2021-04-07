@@ -16,6 +16,8 @@ venv/
 
 # TEST DATA DIRECTORY
 dataMar14/
+data/
+models/
 
 # MAC Storage Files
 *.DS_Store
