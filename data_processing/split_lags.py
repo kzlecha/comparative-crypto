@@ -19,7 +19,7 @@ def reformat(dfPre):
     df = df.iloc[1:]
     dfPre = dfPre.iloc[1:]
 
-    df["priceDirecetion"] = "neutral"
+    df["priceDirection"] = "neutral"
 
     pos_mask = df['priceUsd'] >= dfPre['priceUsd'] * 1.001
     neg_mask = df['priceUsd'] <= dfPre['priceUsd'] * 0.999
