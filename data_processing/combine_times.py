@@ -4,7 +4,7 @@ from os.path import isfile, join
 from pandas import concat, read_csv
 
 
-dir_path = "dataMar14/"
+dir_path = "data/"
 file_list = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
 file_endings = ["5m.csv", "hourly.csv", "daily.csv"]
@@ -17,14 +17,10 @@ for file_ending in file_endings:
 
         filepath = dir_path + filename
         df = read_csv(filepath)
-        df["diff_pos_neg"] = df["sentiment_positive_total"] - df["sentiment_negative_total"]
-
-        # set to neutral by default
-        df["category"] = 0
-        df.loc[df["diff_pos_neg"] > 0.05, ["category"]] = 1
-        df.loc[df["diff_pos_neg"] < 0.05, ["category"]] = -1
+        
+        df["cryptocurrency"] = filename.replace(file_ending, "")
         
         list_data.append(df)
 
     df = concat(list_data)
-    df.to_csv("data/unfiltered/"+file_ending, index=False)
+    df.to_csv("data/combined/"+file_ending, index=False)
