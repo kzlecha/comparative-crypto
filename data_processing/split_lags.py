@@ -16,20 +16,28 @@ def reformat(dfPre):
     df['priceUsd'] = df.priceUsd.shift(-1)
     df['priceBtc'] = df.priceBtc.shift(-1)
 
-    df = df.iloc[1:]
-    dfPre = dfPre.iloc[1:]
+
 
     df["priceDirection"] = "neutral"
 
-    pos_mask = df['priceUsd'] >= dfPre['priceUsd'] * 1.001
-    neg_mask = df['priceUsd'] <= dfPre['priceUsd'] * 0.999
+    pos_mask = df['priceUsd'] > dfPre['priceUsd'] * 1.00
+    neg_mask = df['priceUsd'] <= dfPre['priceUsd'] * 1.00
     df.loc[pos_mask, "priceDirection"] = "positive"
     df.loc[neg_mask, "priceDirection"] = "negative"
+
+    df['priceUsd'] = df.priceUsd.shift(1)
+    df['priceBtc'] = df.priceBtc.shift(1)
+
+    exclude_cols = [0,1,2,4,5,6,7,9,11,12,13,14,16,18,19,20,21,23,25]
+    df = df.iloc[:, ~df.columns.isin(df.columns[exclude_cols])]
+
+    df = df.iloc[1:-1]
+    dfPre = dfPre.iloc[1:-1]
 
     return df
 
 
-dir_path = "dataMar14/"
+dir_path = "dataHourly/"
 file_list = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
 for filename in file_list:
@@ -39,4 +47,4 @@ for filename in file_list:
 
     data = reformat(data)
     
-    data.to_csv("data/"+filename, index=False)
+    data.to_csv("datatest/"+filename, index=False)
