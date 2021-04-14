@@ -13,18 +13,18 @@ def reformat(dfPre):
     dfPre['priceUsd'] = dfPre['priceUsd'].fillna(method='pad')
     df = dfPre.copy(True)
 
+
     df['priceUsd'] = df.priceUsd.shift(-1)
     df['priceBtc'] = df.priceBtc.shift(-1)
 
-
-
     df["priceDirection"] = "neutral"
 
-    pos_mask = df['priceUsd'] > dfPre['priceUsd'] * 1.00
-    neg_mask = df['priceUsd'] <= dfPre['priceUsd'] * 1.00
+    pos_mask = df['priceUsd'] > dfPre['priceUsd']
+    neg_mask = df['priceUsd'] <= dfPre['priceUsd']
     df.loc[pos_mask, "priceDirection"] = "positive"
     df.loc[neg_mask, "priceDirection"] = "negative"
 
+    df['priceT+1'] = df.priceUsd
     df['priceUsd'] = df.priceUsd.shift(1)
     df['priceBtc'] = df.priceBtc.shift(1)
 
@@ -32,7 +32,7 @@ def reformat(dfPre):
     df = df.iloc[:, ~df.columns.isin(df.columns[exclude_cols])]
 
     df = df.iloc[1:-1]
-    dfPre = dfPre.iloc[1:-1]
+    df = df.iloc[:7321]
 
     return df
 
