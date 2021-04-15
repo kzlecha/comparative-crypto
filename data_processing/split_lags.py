@@ -32,12 +32,11 @@ def reformat(dfPre):
     df = df.iloc[:, ~df.columns.isin(df.columns[exclude_cols])]
 
     df = df.iloc[1:-1]
-    df = df.iloc[:7321]
 
     return df
 
 
-dir_path = "dataHourly/"
+dir_path = "data2h/"
 file_list = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
 for filename in file_list:
