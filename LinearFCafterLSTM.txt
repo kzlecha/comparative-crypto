@@ -76,3 +76,14 @@ definitely same as one before - non-determinism at it's finest?
 6      litecoinhourly.csv  1000  0.01  0.511384
 7        ripplehourly.csv  1000  0.01  0.515027
 8       stellarhourly.csv  1000  0.01  0.504098
+
+                        0     1     2         3
+0  binance-coinhourly.csv  1000  0.01  0.521403
+1  bitcoin-cashhourly.csv  1000  0.01  0.525046
+2       bitcoinhourly.csv  1000  0.01  0.529599
+3       cardanohourly.csv  1000  0.01  0.510929
+4     chainlinkhourly.csv  1000  0.01  0.513661
+5      ethereumhourly.csv  1000  0.01  0.506831
+6      litecoinhourly.csv  1000  0.01  0.511384
+7        ripplehourly.csv  1000  0.01  0.510474
+8       stellarhourly.csv  1000  0.01  0.502277
