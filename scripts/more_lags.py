@@ -9,8 +9,8 @@ def shift_sentiments(df, look_back=11):
     """
     sentiments = {}
     for column in [column for column in df.columns if column != "priceUsd"]:
-        for i in range(1, look_back):
-            sentiments[column+"_t-"+str(i)] = df[column].shift(-i)
+        for i in range(0, look_back):
+            sentiments[column+"_t-"+str(i)] = df[column].shift(i)
 
     return DataFrame(sentiments)
 
@@ -18,7 +18,7 @@ def shift_sentiments(df, look_back=11):
 def get_price_data(df, look_back=10):
     price_list = {}
     for i in range(1, look_back):
-        price_list["t-"+str(i)] = df.priceUsd.shift(-i)
+        price_list["t-"+str(i)] = df.priceUsd.shift(i)
 
     price_list = DataFrame(price_list)
 
@@ -32,9 +32,10 @@ def assign_price_dir(df):
     Assign postive/negative/neutral direction to the price
     """
     df["priceDirection"] = "neutral"
+    dfNext = df.shift(-1)
 
-    pos_mask = df['priceUsd'] > df['mean_price_before'] + 2*df["std_price_before"]
-    neg_mask = df['priceUsd'] <= df['mean_price_before'] - 2*df["std_price_before"]
+    pos_mask = df['priceUsd'] < dfNext["priceUsd"]
+    neg_mask = df['priceUsd'] > dfNext["priceUsd"]
     df.loc[pos_mask, "priceDirection"] = "positive"
     df.loc[neg_mask, "priceDirection"] = "negative"
 
@@ -71,7 +72,7 @@ def reformat(dfPre):
 
 
 dir_path = "data2h/"
-time_chunks = ["2h", "30m"]
+time_chunks = ["2h"]#, "30m"]
 
 for time_chunk in time_chunks:
     file_list = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
