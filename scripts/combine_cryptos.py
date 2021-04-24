@@ -4,20 +4,24 @@ from os.path import isfile, join
 from pandas import concat, read_csv, DataFrame
 
 
-def shift_sentiments(df, look_back=11):
+def shift_sentiments(df, look_back=12):
     """
+    add the previous look_back sentiments to the dataframe
     """
     sentiments = {}
     for column in [column for column in df.columns if column != "priceUsd"]:
-        for i in range(1, look_back):
+        for i in range(1, look_back+1, 1):
             sentiments[column+"_t-"+str(i)] = df[column].shift(-1)
 
     return DataFrame(sentiments)
 
 
-def get_price_data(df, look_back=10):
+def get_price_data(df, look_back=12):
+    """
+    get the mean and standard deviation of the price over the look back time
+    """
     price_list = {}
-    for i in range(1, look_back):
+    for i in range(1, look_back+1, 1):
         price_list["t-"+str(i)] = df.priceUsd.shift(-1)
 
     price_list = DataFrame(price_list)
@@ -27,16 +31,25 @@ def get_price_data(df, look_back=10):
     return mean, std
 
 
-def assign_price_dir(df, dfPre):
+def assign_best_price(df):
     """
     Assign postive/negative/neutral direction to the price
     """
-    df["priceDirection"] = "neutral"
+    diff_cols = [column for column in df.columns if "price_diff" in column]
 
-    pos_mask = df['priceUsd'] > dfPre['priceUsd']
-    neg_mask = df['priceUsd'] <= dfPre['priceUsd']
-    df.loc[pos_mask, "priceDirection"] = "positive"
-    df.loc[neg_mask, "priceDirection"] = "negative"
+    # assign best price to best price
+    df["best_diff"] = df[diff_cols].max(axis=1)
+
+    # assign crypto name to best price
+    df["best_crypto"] = ""
+    for col in diff_cols:
+        crypto_name = col.replace("price_diff_", "")
+
+        mask = df["best_diff"] == df[col]
+        df.loc[mask, "best_crypto"] == crypto_name
+
+    df = df.drop(diff_cols, axis=1)
+    return df
 
 
 def reformat(dfPre):
@@ -49,6 +62,8 @@ def reformat(dfPre):
         - mean_price_before: mean price in 10 times before t (history)
         - std_price_before: std price in 10 times before t (history)
         - sentiment_t-1, ..., sentiment_t-10: sentiment in t-1 to t-10
+        - volume_t-1, ..., volume_t-10: volume in t-1 to t-10
+    Note that sentiment is seperated for positive and negative
     ---
     @param dfPre: dataframe before preprocessing
     """
@@ -64,7 +79,8 @@ def reformat(dfPre):
     # get the new prices
     df["mean_price_before"], df["std_price_before"] = get_price_data(dfPre)
     df["priceUsd"] = prices
-    df["datetime"] = dates
+
+    df["price_diff"] = df['priceUsd'] - df['mean_price_before']
 
     return df.dropna(axis=0)
 
@@ -73,18 +89,19 @@ def reformat(dfPre):
 dir_path = "dataApr15/training/2h/"
 file_list = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
-list_data = []
-
+list_dfs = []
 for filename in [name for name in file_list]:
+    crypto_name = filename.replace("2h.csv", "")
 
     filepath = dir_path + filename
-    df = read_csv(filepath)
-    
-    df = reformat(df)
-    df["cryptocurrency"] = filename.replace("2h.csv", "")
-    
-    list_data.append(df)
+    df = reformat(read_csv(filepath))
 
-df = concat(list_data)
-df = df.sample(frac=1).sort_values(by="datetime",ascending=True)
-df.to_csv("data/training_2h.csv", index=False)
+    new_cols = [column + "_" + crypto_name for column in df.columns]
+    df.columns = new_cols
+
+    list_dfs.append(df)
+
+new_df = concat(list_dfs)
+new_df = assign_best_price(new_df)
+
+new_df.to_csv("data/training_2h.csv", index=False)
