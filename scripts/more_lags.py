@@ -64,7 +64,6 @@ def reformat(dfPre):
     # get the new prices
     df["mean_price_before"], df["std_price_before"] = get_price_data(dfPre)
     df["priceUsd"] = prices
-    df["datetime"] = dates
 
     return df.dropna(axis=0)
 
