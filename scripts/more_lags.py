@@ -33,8 +33,8 @@ def assign_price_dir(df):
     """
     df["priceDirection"] = "neutral"
 
-    pos_mask = df['priceUsd'] > df['mean_price_before']
-    neg_mask = df['priceUsd'] <= df['mean_price_before']
+    pos_mask = df['priceUsd'] > df['mean_price_before'] + 2*df["std_price_before"]
+    neg_mask = df['priceUsd'] <= df['mean_price_before'] - 2*df["std_price_before"]
     df.loc[pos_mask, "priceDirection"] = "positive"
     df.loc[neg_mask, "priceDirection"] = "negative"
 
