@@ -27,14 +27,14 @@ def get_price_data(df, look_back=10):
     return mean, std
 
 
-def assign_price_dir(df, dfPre):
+def assign_price_dir(df):
     """
     Assign postive/negative/neutral direction to the price
     """
     df["priceDirection"] = "neutral"
 
-    pos_mask = df['priceUsd'] > dfPre['priceUsd']
-    neg_mask = df['priceUsd'] <= dfPre['priceUsd']
+    pos_mask = df['priceUsd'] > df['mean_price_before']
+    neg_mask = df['priceUsd'] <= df['mean_price_before']
     df.loc[pos_mask, "priceDirection"] = "positive"
     df.loc[neg_mask, "priceDirection"] = "negative"
 
@@ -64,6 +64,8 @@ def reformat(dfPre):
     # get the new prices
     df["mean_price_before"], df["std_price_before"] = get_price_data(dfPre)
     df["priceUsd"] = prices
+
+    assign_price_dir(df)
 
     return df.dropna(axis=0)
 
