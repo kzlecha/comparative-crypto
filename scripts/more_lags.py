@@ -4,20 +4,20 @@ from os.path import isfile, join
 from pandas import concat, read_csv, DataFrame
 
 
-def shift_sentiments(df, look_back=11):
+def shift_sentiments(df, look_back=12):
     """
     """
     sentiments = {}
     for column in [column for column in df.columns if column != "priceUsd"]:
-        for i in range(0, look_back):
+        for i in range(0, look_back + 1, 1):
             sentiments[column+"_t-"+str(i)] = df[column].shift(i)
 
     return DataFrame(sentiments)
 
 
-def get_price_data(df, look_back=10):
+def get_price_data(df, look_back=12):
     price_list = {}
-    for i in range(1, look_back):
+    for i in range(1, look_back + 1, 1):
         price_list["t-"+str(i)] = df.priceUsd.shift(i)
 
     price_list = DataFrame(price_list)
