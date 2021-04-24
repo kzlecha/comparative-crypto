@@ -79,6 +79,7 @@ def reformat(dfPre):
     # get the new prices
     df["mean_price_before"], df["std_price_before"] = get_price_data(dfPre)
     df["priceUsd"] = prices
+    df.index = dates
 
     df["price_diff"] = df['priceUsd'] - df['mean_price_before']
 
@@ -101,7 +102,7 @@ for filename in [name for name in file_list]:
 
     list_dfs.append(df)
 
-new_df = concat(list_dfs)
+new_df = concat(list_dfs, axis=1, join="inner")
 new_df = assign_best_price(new_df)
 
 new_df.to_csv("data/training_2h.csv", index=False)
