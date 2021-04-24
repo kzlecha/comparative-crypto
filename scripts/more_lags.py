@@ -10,7 +10,7 @@ def shift_sentiments(df, look_back=11):
     sentiments = {}
     for column in [column for column in df.columns if column != "priceUsd"]:
         for i in range(1, look_back):
-            sentiments[column+"_t-"+str(i)] = df[column].shift(-1)
+            sentiments[column+"_t-"+str(i)] = df[column].shift(-i)
 
     return DataFrame(sentiments)
 
@@ -18,7 +18,7 @@ def shift_sentiments(df, look_back=11):
 def get_price_data(df, look_back=10):
     price_list = {}
     for i in range(1, look_back):
-        price_list["t-"+str(i)] = df.priceUsd.shift(-1)
+        price_list["t-"+str(i)] = df.priceUsd.shift(-i)
 
     price_list = DataFrame(price_list)
 
