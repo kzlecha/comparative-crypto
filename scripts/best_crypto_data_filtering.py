@@ -2,6 +2,7 @@ from os import listdir
 from os.path import isfile, join
 
 from pandas import concat, read_csv, DataFrame
+from sklearn.preprocessing import StandardScaler
 
 
 def shift_sentiments(df, look_back=12):
@@ -36,6 +37,8 @@ def assign_best_price(df):
     Assign postive/negative/neutral direction to the price
     """
     diff_cols = [column for column in df.columns if "price_diff" in column]
+
+    df[diff_cols] = StandardScaler().fit_transform(df[diff_cols])
 
     # assign best price to best price
     df["best_diff"] = df[diff_cols].max(axis=1)
@@ -74,7 +77,8 @@ def reformat(dfPre):
     dfPre = dfPre.iloc[:, ~dfPre.columns.isin(dfPre.columns[exclude_cols])]
 
     # shift the sentiments
-    # df = shift_sentiments(dfPre)
+    df = shift_sentiments(dfPre)
+    # df = DataFrame()
 
     # get the new prices
     df["mean_price_before"], df["std_price_before"] = get_price_data(dfPre)
@@ -107,4 +111,6 @@ new_df = assign_best_price(new_df)
 
 new_df = new_df.loc[new_df["best_crypto"] != ""]
 
-new_df.to_csv("dataBestCrypto/2h_price.csv", index=False)
+new_df.to_csv("dataBestCrypto/2h_sentiment.csv", index=False)
+
+print(new_df.groupby("best_crypto")["best_crypto"].count())
