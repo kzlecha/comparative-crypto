@@ -74,7 +74,7 @@ def reformat(dfPre):
     dfPre = dfPre.iloc[:, ~dfPre.columns.isin(dfPre.columns[exclude_cols])]
 
     # shift the sentiments
-    df = shift_sentiments(dfPre)
+    # df = shift_sentiments(dfPre)
 
     # get the new prices
     df["mean_price_before"], df["std_price_before"] = get_price_data(dfPre)
