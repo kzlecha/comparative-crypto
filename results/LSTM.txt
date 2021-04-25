@@ -1,0 +1,111 @@
+input size:  7
+epochs:  100
+learning rate:  0.01
+hidden size:  64
+look back:  12
+                        0         1
+0  binance-coinhourly.csv  0.492476
+1  bitcoin-cashhourly.csv  0.471272
+2       bitcoinhourly.csv  0.487688
+3       cardanohourly.csv  0.481532
+4     chainlinkhourly.csv  0.478112
+5      ethereumhourly.csv  0.497948
+6      litecoinhourly.csv  0.508208
+7        ripplehourly.csv  0.449384
+8       stellarhourly.csv  0.481532
+
+input size:  7
+epochs:  100
+learning rate:  0.01
+hidden size:  32
+look back:  12
+                    0         1
+0  binance-coin2h.csv  0.476027
+1  bitcoin-cash2h.csv  0.495434
+2       bitcoin2h.csv  0.500000
+3       cardano2h.csv  0.503425
+4     chainlink2h.csv  0.497717
+5      ethereum2h.csv  0.507991
+6      litecoin2h.csv  0.489726
+7        ripple2h.csv  0.505708
+8       stellar2h.csv  0.505708
+
+input size:  7
+epochs:  100
+learning rate:  0.01
+hidden size:  32
+look back:  12
+                     0         1
+0  binance-coin30m.csv  0.496725
+1  bitcoin-cash30m.csv  0.485901
+2       bitcoin30m.csv  0.490174
+3       cardano30m.csv  0.497009
+4     chainlink30m.csv  0.489604
+5      ethereum30m.csv  0.502991
+6      litecoin30m.csv  0.478211
+7        ripple30m.csv  0.495300
+8       stellar30m.csv  0.500427
+
+input size:  22
+epochs:  500
+learning rate:  0.01
+hidden size:  32
+look back:  12
+                    0         1
+0  binance-coin5m.csv  0.486957
+1  bitcoin-cash5m.csv  0.465839
+2       bitcoin5m.csv  0.494410
+3       cardano5m.csv  0.516770
+4     chainlink5m.csv  0.473913
+5      ethereum5m.csv  0.513665
+6      litecoin5m.csv  0.494410
+7        ripple5m.csv  0.490062
+8       stellar5m.csv  0.499379
+
+input size:  22
+epochs:  500
+learning rate:  0.001
+hidden size:  32
+look back:  6
+                       0         1
+0  binance-coindaily.csv  0.519231
+1  bitcoin-cashdaily.csv  0.461538
+2       bitcoindaily.csv  0.500000
+3       cardanodaily.csv  0.493590
+4     chainlinkdaily.csv  0.500000
+5      ethereumdaily.csv  0.435897
+6      litecoindaily.csv  0.448718
+7        rippledaily.csv  0.544872
+8       stellardaily.csv  0.570513
+
+input size:  22
+epochs:  250
+learning rate:  0.01
+hidden size:  32
+look back:  30
+                       0         1
+0  binance-coindaily.csv  0.513158
+1  bitcoin-cashdaily.csv  0.486842
+2       bitcoindaily.csv  0.460526
+3       cardanodaily.csv  0.486842
+4     chainlinkdaily.csv  0.493421
+5      ethereumdaily.csv  0.559211
+6      litecoindaily.csv  0.506579
+7        rippledaily.csv  0.578947
+8       stellardaily.csv  0.532895
+
+input size:  22
+epochs:  200
+learning rate:  0.01
+hidden size:  32
+look back:  24
+                        0         1
+0  binance-coinhourly.csv  0.489926
+1  bitcoin-cashhourly.csv  0.500246
+2       bitcoinhourly.csv  0.482064
+3       cardanohourly.csv  0.500737
+4     chainlinkhourly.csv  0.473710
+5      ethereumhourly.csv  0.498280
+6      litecoinhourly.csv  0.509091
+7        ripplehourly.csv  0.485504
+8       stellarhourly.csv  0.523833
