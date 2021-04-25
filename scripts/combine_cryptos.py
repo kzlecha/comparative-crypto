@@ -11,7 +11,7 @@ def shift_sentiments(df, look_back=12):
     sentiments = {}
     for column in [column for column in df.columns if column != "priceUsd"]:
         for i in range(1, look_back+1, 1):
-            sentiments[column+"_t-"+str(i)] = df[column].shift(-1)
+            sentiments[column+"_t-"+str(i)] = df[column].shift(i)
 
     return DataFrame(sentiments)
 
@@ -22,7 +22,7 @@ def get_price_data(df, look_back=12):
     """
     price_list = {}
     for i in range(1, look_back+1, 1):
-        price_list["t-"+str(i)] = df.priceUsd.shift(-1)
+        price_list["t-"+str(i)] = df.priceUsd.shift(i)
 
     price_list = DataFrame(price_list)
 
@@ -41,12 +41,12 @@ def assign_best_price(df):
     df["best_diff"] = df[diff_cols].max(axis=1)
 
     # assign crypto name to best price
-    df["best_crypto"] = ""
+    df["best_crypto"] = None
     for col in diff_cols:
         crypto_name = col.replace("price_diff_", "")
 
         mask = df["best_diff"] == df[col]
-        df.loc[mask, "best_crypto"] == crypto_name
+        df["best_crypto"].loc[mask] = crypto_name
 
     df = df.drop(diff_cols, axis=1)
     return df
@@ -105,4 +105,6 @@ for filename in [name for name in file_list]:
 new_df = concat(list_dfs, axis=1, join="inner")
 new_df = assign_best_price(new_df)
 
-new_df.to_csv("data/training_2h.csv", index=False)
+new_df = new_df.loc[new_df["best_crypto"] != ""]
+
+new_df.to_csv("data/all_2h.csv", index=False)
