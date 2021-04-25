@@ -1,0 +1,94 @@
+Just sentiment, hourly
+
+                        0     1      2         3
+0  binance-coinhourly.csv  1000  0.001  0.518670
+1  bitcoin-cashhourly.csv  1000  0.001  0.511840
+2       bitcoinhourly.csv  1000  0.001  0.502277
+3       cardanohourly.csv  1000  0.001  0.505464
+4     chainlinkhourly.csv  1000  0.001  0.514572
+5      ethereumhourly.csv  1000  0.001  0.511840
+6      litecoinhourly.csv  1000  0.001  0.515483
+7        ripplehourly.csv  1000  0.001  0.519126
+8       stellarhourly.csv  1000  0.001  0.501821
+
+                        0     1     2         3
+0  binance-coinhourly.csv  1100  0.01  0.502732
+1  bitcoin-cashhourly.csv  1100  0.01  0.521858
+2       bitcoinhourly.csv  1100  0.01  0.519126
+3       cardanohourly.csv  1100  0.01  0.507514
+4     chainlinkhourly.csv  1100  0.01  0.517077
+5      ethereumhourly.csv  1100  0.01  0.497268
+6      litecoinhourly.csv  1100  0.01  0.525273
+7        ripplehourly.csv  1100  0.01  0.519809
+8       stellarhourly.csv  1100  0.01  0.503415
+
+                        0     1     2         3
+0  binance-coinhourly.csv  1100  0.03  0.504781
+1  bitcoin-cashhourly.csv  1100  0.03  0.523907
+2       bitcoinhourly.csv  1100  0.03  0.509563
+3       cardanohourly.csv  1100  0.03  0.507514
+4     chainlinkhourly.csv  1100  0.03  0.513661
+5      ethereumhourly.csv  1100  0.03  0.494536
+6      litecoinhourly.csv  1100  0.03  0.514344
+7        ripplehourly.csv  1100  0.03  0.517077
+8       stellarhourly.csv  1100  0.03  0.506831
+
+                        0     1     2         3
+0  binance-coinhourly.csv  1000  0.01  0.504098
+1  bitcoin-cashhourly.csv  1000  0.01  0.513661
+2       bitcoinhourly.csv  1000  0.01  0.517077
+3       cardanohourly.csv  1000  0.01  0.509563
+4     chainlinkhourly.csv  1000  0.01  0.520492
+5      ethereumhourly.csv  1000  0.01  0.505464
+6      litecoinhourly.csv  1000  0.01  0.510246
+7        ripplehourly.csv  1000  0.01  0.504098
+8       stellarhourly.csv  1000  0.01  0.501366
+
+
+
+just 1 linear fc after lstm and 5 hidden_size
+
+0  binance-coinhourly.csv  1000  0.01  0.500000
+1  bitcoin-cashhourly.csv  1000  0.01  0.508197
+2       bitcoinhourly.csv  1000  0.01  0.518443
+3       cardanohourly.csv  1000  0.01  0.500683
+4     chainlinkhourly.csv  1000  0.01  0.516393
+5      ethereumhourly.csv  1000  0.01  0.502049
+6      litecoinhourly.csv  1000  0.01  0.521858
+7        ripplehourly.csv  1000  0.01  0.519126
+8       stellarhourly.csv  1000  0.01  0.507514
+same as last one?
+                        0     1     2         3
+0  binance-coinhourly.csv  1000  0.01  0.511840
+1  bitcoin-cashhourly.csv  1000  0.01  0.510929
+2       bitcoinhourly.csv  1000  0.01  0.514572
+3       cardanohourly.csv  1000  0.01  0.507741
+4     chainlinkhourly.csv  1000  0.01  0.511840
+5      ethereumhourly.csv  1000  0.01  0.514117
+6      litecoinhourly.csv  1000  0.01  0.516393
+7        ripplehourly.csv  1000  0.01  0.512750
+8       stellarhourly.csv  1000  0.01  0.509563
+definitely same as one before - non-determinism at it's finest?
+
+
+                        0     1     2         3
+0  binance-coinhourly.csv  1000  0.01  0.512750
+1  bitcoin-cashhourly.csv  1000  0.01  0.529599
+2       bitcoinhourly.csv  1000  0.01  0.523679
+3       cardanohourly.csv  1000  0.01  0.509107
+4     chainlinkhourly.csv  1000  0.01  0.520036
+5      ethereumhourly.csv  1000  0.01  0.509107
+6      litecoinhourly.csv  1000  0.01  0.511384
+7        ripplehourly.csv  1000  0.01  0.515027
+8       stellarhourly.csv  1000  0.01  0.504098
+
+                        0     1     2         3
+0  binance-coinhourly.csv  1000  0.01  0.521403
+1  bitcoin-cashhourly.csv  1000  0.01  0.525046
+2       bitcoinhourly.csv  1000  0.01  0.529599
+3       cardanohourly.csv  1000  0.01  0.510929
+4     chainlinkhourly.csv  1000  0.01  0.513661
+5      ethereumhourly.csv  1000  0.01  0.506831
+6      litecoinhourly.csv  1000  0.01  0.511384
+7        ripplehourly.csv  1000  0.01  0.510474
+8       stellarhourly.csv  1000  0.01  0.502277
