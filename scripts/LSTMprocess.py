@@ -28,7 +28,7 @@ def reformat(dfPre):
     df['priceUsd'] = df.priceUsd.shift(1)
     df['priceBtc'] = df.priceBtc.shift(1)
 
-    exclude_cols = [0,1,2,4,5,6,7,9,11,12,13,14,16,18,19,20,21,23,25]
+    exclude_cols = [0,1,2,4]
     df = df.iloc[:, ~df.columns.isin(df.columns[exclude_cols])]
 
     df = df.iloc[1:-1]
@@ -36,7 +36,7 @@ def reformat(dfPre):
     return df
 
 
-dir_path = "data2h/"
+dir_path = "dataMar14/"
 file_list = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
 for filename in file_list:
@@ -46,4 +46,4 @@ for filename in file_list:
 
     data = reformat(data)
     
-    data.to_csv("datatest/"+filename, index=False)
+    data.to_csv("dataLSTM/mar14/"+filename, index=False)

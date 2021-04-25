@@ -71,7 +71,7 @@ def reformat(dfPre):
     return df.dropna(axis=0)
 
 
-dir_path = "data2h/"
+dir_path = "dataXGB/"
 time_chunks = ["2h"]#, "30m"]
 
 for time_chunk in time_chunks:
@@ -83,6 +83,6 @@ for time_chunk in time_chunks:
 
         data = reformat(data)
 
-        filepath = "data/" + time_chunk + "/"
+        filepath = "dataXGB/" + time_chunk + "/"
 
         data.to_csv(filepath+filename, index=False)
