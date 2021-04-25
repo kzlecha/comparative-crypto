@@ -109,3 +109,183 @@ look back:  24
 6      litecoinhourly.csv  0.509091
 7        ripplehourly.csv  0.485504
 8       stellarhourly.csv  0.523833
+
+input size:  7
+epochs:  100
+learning rate:  0.01
+hidden size:  64
+look back:  24
+layers: 4
+                        0         1
+0  binance-coinhourly.csv  0.496230
+1  bitcoin-cashhourly.csv  0.475668
+2       bitcoinhourly.csv  0.489376
+3       cardanohourly.csv  0.473612
+4     chainlinkhourly.csv  0.469500
+5      ethereumhourly.csv  0.492803
+6      litecoinhourly.csv  0.481837
+7        ripplehourly.csv  0.481151
+8       stellarhourly.csv  0.507882
+
+binance-coinhourly.csv
+Epoch: 0, loss: 0.19045
+Epoch: 50, loss: 0.00043
+% positive:  0.5174777244688142
+% negative:  0.48252227553118576
+positive correct: 366/755  0.4847682119205298
+negative correct: 358/704  0.5085227272727273
+test accuracy: 0.4962302947224126
+bitcoin-cashhourly.csv
+Epoch: 0, loss: 0.30241
+Epoch: 50, loss: 0.00065
+% positive:  0.49828649760109667
+% negative:  0.5017135023989033
+positive correct: 334/727  0.4594222833562586
+negative correct: 360/732  0.4918032786885246
+test accuracy: 0.4756682659355723
+bitcoinhourly.csv
+Epoch: 0, loss: 0.29636
+Epoch: 50, loss: 0.00038
+% positive:  0.5154215215901302
+% negative:  0.4845784784098698
+positive correct: 388/752  0.5159574468085106
+negative correct: 326/707  0.4611032531824611
+test accuracy: 0.4893762851267992
+cardanohourly.csv
+Epoch: 0, loss: 0.22240
+Epoch: 50, loss: 0.00206
+% positive:  0.49485949280328995
+% negative:  0.5051405071967101
+positive correct: 348/722  0.481994459833795
+negative correct: 343/737  0.4654002713704206
+test accuracy: 0.4736120630568883
+chainlinkhourly.csv
+Epoch: 0, loss: 0.06895
+Epoch: 50, loss: 0.00020
+% positive:  0.47909527073337904
+% negative:  0.520904729266621
+positive correct: 313/699  0.44778254649499283
+negative correct: 372/760  0.48947368421052634
+test accuracy: 0.4694996572995202
+ethereumhourly.csv
+Epoch: 0, loss: 0.25575
+Epoch: 50, loss: 0.00053
+% positive:  0.5140507196710076
+% negative:  0.4859492803289925
+positive correct: 376/750  0.5013333333333333
+negative correct: 343/709  0.4837799717912553
+test accuracy: 0.49280328992460587
+litecoinhourly.csv
+Epoch: 0, loss: 0.15684
+Epoch: 50, loss: 0.00038
+% positive:  0.4845784784098698
+% negative:  0.5154215215901302
+positive correct: 333/707  0.471004243281471
+negative correct: 370/752  0.4920212765957447
+test accuracy: 0.4818368745716244
+ripplehourly.csv
+Epoch: 0, loss: 0.39295
+Epoch: 50, loss: 0.00045
+% positive:  0.4873200822481151
+% negative:  0.5126799177518848
+positive correct: 335/711  0.4711673699015471
+negative correct: 367/748  0.49064171122994654
+test accuracy: 0.48115147361206306
+stellarhourly.csv
+Epoch: 0, loss: 0.36342
+Epoch: 50, loss: 0.00058
+% positive:  0.5065113091158328
+% negative:  0.49348869088416725
+positive correct: 372/739  0.503382949932341
+negative correct: 369/720  0.5125
+test accuracy: 0.5078821110349554
+
+input size:  7
+epochs:  100
+learning rate:  0.01
+hidden size:  64
+look back:  24
+back to single layer
+                     0         1
+0  binance-coin30m.csv  0.509122
+1  bitcoin-cash30m.csv  0.495154
+2       bitcoin30m.csv  0.483466
+3       cardano30m.csv  0.497719
+4     chainlink30m.csv  0.484892
+5      ethereum30m.csv  0.488027
+6      litecoin30m.csv  0.490023
+7        ripple30m.csv  0.480331
+8       stellar30m.csv  0.482896
+
+binance-coin30m.csv
+Epoch: 0, loss: 0.13817
+Epoch: 50, loss: 0.00008
+% positive:  0.5062713797035348
+% negative:  0.49372862029646525
+positive correct: 932/1776  0.5247747747747747
+negative correct: 854/1732  0.4930715935334873
+test accuracy: 0.5091220068415051
+bitcoin-cash30m.csv
+Epoch: 0, loss: 0.18495
+Epoch: 50, loss: 0.00013
+% positive:  0.5011402508551881
+% negative:  0.49885974914481185
+positive correct: 888/1758  0.5051194539249146
+negative correct: 849/1750  0.48514285714285715
+test accuracy: 0.4951539338654504
+bitcoin30m.csv
+Epoch: 0, loss: 0.12633
+Epoch: 50, loss: 0.00007
+% positive:  0.5310718358038768
+% negative:  0.46892816419612315
+positive correct: 960/1863  0.5152979066022544
+negative correct: 736/1645  0.4474164133738602
+test accuracy: 0.48346636259977194
+cardano30m.csv
+Epoch: 0, loss: 0.08958
+Epoch: 50, loss: 0.00008
+% positive:  0.5011402508551881
+% negative:  0.49885974914481185
+positive correct: 913/1758  0.5193401592718999
+negative correct: 833/1750  0.476
+test accuracy: 0.4977194982896237
+chainlink30m.csv
+Epoch: 0, loss: 0.08649
+Epoch: 50, loss: 0.00010
+% positive:  0.4885974914481186
+% negative:  0.5114025085518814
+positive correct: 848/1714  0.49474912485414235
+negative correct: 853/1794  0.4754738015607581
+test accuracy: 0.4848916761687571
+ethereum30m.csv
+Epoch: 0, loss: 0.13566
+Epoch: 50, loss: 0.00007
+% positive:  0.5014253135689852
+% negative:  0.4985746864310148
+positive correct: 913/1759  0.519044911881751
+negative correct: 799/1749  0.45683247570040025
+test accuracy: 0.4880273660205245
+litecoin30m.csv
+Epoch: 0, loss: 0.08952
+Epoch: 50, loss: 0.00005
+% positive:  0.49372862029646525
+% negative:  0.5062713797035348
+positive correct: 885/1732  0.5109699769053118
+negative correct: 834/1776  0.46959459459459457
+test accuracy: 0.49002280501710377
+ripple30m.csv
+Epoch: 0, loss: 0.01405
+Epoch: 50, loss: 0.00003
+% positive:  0.4751995438996579
+% negative:  0.5248004561003421
+positive correct: 826/1667  0.495500899820036
+negative correct: 859/1841  0.4665942422596415
+test accuracy: 0.48033067274800456
+stellar30m.csv
+Epoch: 0, loss: 0.08345
+Epoch: 50, loss: 0.00004
+% positive:  0.4880273660205245
+% negative:  0.5119726339794755
+positive correct: 834/1712  0.4871495327102804
+negative correct: 860/1796  0.47884187082405344
+test accuracy: 0.4828962371721779
