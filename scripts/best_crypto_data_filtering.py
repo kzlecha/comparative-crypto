@@ -87,7 +87,7 @@ def reformat(dfPre):
 
 
 
-dir_path = "dataApr15/training/2h/"
+dir_path = "dataApr15/2h/"
 file_list = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
 list_dfs = []
@@ -107,4 +107,4 @@ new_df = assign_best_price(new_df)
 
 new_df = new_df.loc[new_df["best_crypto"] != ""]
 
-new_df.to_csv("data/all_2h.csv", index=False)
+new_df.to_csv("dataBestCrypto/2h_price.csv", index=False)
