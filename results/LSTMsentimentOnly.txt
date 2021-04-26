@@ -1,0 +1,441 @@
+
+input size:  6
+epochs:  500
+learning rate:  0.005
+hidden size:  32
+look back:  12
+                    0         1
+0  binance-coin2h.csv  0.523973
+1  bitcoin-cash2h.csv  0.495434
+2       bitcoin2h.csv  0.469178
+3       cardano2h.csv  0.493151
+4     chainlink2h.csv  0.488584
+5      ethereum2h.csv  0.492009
+6      litecoin2h.csv  0.493151
+7        ripple2h.csv  0.503425
+8       stellar2h.csv  0.514840
+
+13]
+
+
+
+
+
+  plot_name = f"{crypto_name}{file_ending}.png"
+  plot_time_series(data_predict, dataY_plot, cutoff, plot_name)
+
+  #model_name = f"{crypto_name}.pth"
+  #torch.save(lstm.state_dict(), model_name)
+
+  results.append([filename, test_accuracy])
+binance-coin2h.csv
+Epoch: 0, loss: 0.16285
+Epoch: 50, loss: 0.02049
+Epoch: 100, loss: 0.01651
+Epoch: 150, loss: 0.01426
+Epoch: 200, loss: 0.01239
+Epoch: 250, loss: 0.01083
+Epoch: 300, loss: 0.00937
+Epoch: 350, loss: 0.00866
+Epoch: 400, loss: 0.00751
+Epoch: 450, loss: 0.00650
+% positive:  0.5171232876712328
+% negative:  0.4828767123287671
+positive correct: 239/453  0.5275938189845475
+negative correct: 220/423  0.5200945626477541
+test accuracy: 0.523972602739726
+bitcoin-cash2h.csv
+Epoch: 0, loss: 0.19024
+Epoch: 50, loss: 0.02136
+Epoch: 100, loss: 0.01660
+Epoch: 150, loss: 0.01176
+Epoch: 200, loss: 0.00951
+Epoch: 250, loss: 0.00758
+Epoch: 300, loss: 0.00623
+Epoch: 350, loss: 0.00481
+Epoch: 400, loss: 0.00407
+Epoch: 450, loss: 0.00356
+% positive:  0.5091324200913242
+% negative:  0.4908675799086758
+positive correct: 228/446  0.5112107623318386
+negative correct: 206/430  0.4790697674418605
+test accuracy: 0.4954337899543379
+bitcoin2h.csv
+Epoch: 0, loss: 0.08878
+Epoch: 50, loss: 0.00351
+Epoch: 100, loss: 0.00318
+Epoch: 150, loss: 0.00287
+Epoch: 200, loss: 0.00272
+Epoch: 250, loss: 0.00254
+Epoch: 300, loss: 0.00233
+Epoch: 350, loss: 0.00218
+Epoch: 400, loss: 0.00204
+Epoch: 450, loss: 0.00195
+% positive:  0.5582191780821918
+% negative:  0.4417808219178082
+positive correct: 226/489  0.4621676891615542
+negative correct: 185/387  0.4780361757105943
+test accuracy: 0.4691780821917808
+cardano2h.csv
+Epoch: 0, loss: 0.12496
+Epoch: 50, loss: 0.01200
+Epoch: 100, loss: 0.00980
+Epoch: 150, loss: 0.00900
+Epoch: 200, loss: 0.00793
+Epoch: 250, loss: 0.00660
+Epoch: 300, loss: 0.00567
+Epoch: 350, loss: 0.00503
+Epoch: 400, loss: 0.00421
+Epoch: 450, loss: 0.00409
+% positive:  0.5182648401826484
+% negative:  0.4817351598173516
+positive correct: 224/454  0.4933920704845815
+negative correct: 208/422  0.4928909952606635
+test accuracy: 0.4931506849315068
+chainlink2h.csv
+Epoch: 0, loss: 0.19277
+Epoch: 50, loss: 0.03506
+Epoch: 100, loss: 0.02823
+Epoch: 150, loss: 0.02078
+Epoch: 200, loss: 0.01524
+Epoch: 250, loss: 0.01223
+Epoch: 300, loss: 0.01045
+Epoch: 350, loss: 0.01327
+Epoch: 400, loss: 0.00739
+Epoch: 450, loss: 0.00585
+% positive:  0.5045662100456622
+% negative:  0.4954337899543379
+positive correct: 228/442  0.5158371040723982
+negative correct: 200/434  0.4608294930875576
+test accuracy: 0.4885844748858447
+ethereum2h.csv
+Epoch: 0, loss: 0.09554
+Epoch: 50, loss: 0.00851
+Epoch: 100, loss: 0.00660
+Epoch: 150, loss: 0.00554
+Epoch: 200, loss: 0.00470
+Epoch: 250, loss: 0.00404
+Epoch: 300, loss: 0.00364
+Epoch: 350, loss: 0.00302
+Epoch: 400, loss: 0.00262
+Epoch: 450, loss: 0.00234
+% positive:  0.5593607305936074
+% negative:  0.4406392694063927
+positive correct: 243/490  0.4959183673469388
+negative correct: 188/386  0.48704663212435234
+test accuracy: 0.4920091324200913
+litecoin2h.csv
+Epoch: 0, loss: 0.03392
+Epoch: 50, loss: 0.00757
+Epoch: 100, loss: 0.00635
+Epoch: 150, loss: 0.00517
+Epoch: 200, loss: 0.00419
+Epoch: 250, loss: 0.00322
+Epoch: 300, loss: 0.00264
+Epoch: 350, loss: 0.00228
+Epoch: 400, loss: 0.00177
+Epoch: 450, loss: 0.00193
+% positive:  0.5102739726027398
+% negative:  0.4897260273972603
+positive correct: 224/447  0.5011185682326622
+negative correct: 208/429  0.48484848484848486
+test accuracy: 0.4931506849315068
+ripple2h.csv
+Epoch: 0, loss: 0.00997
+Epoch: 50, loss: 0.00351
+Epoch: 100, loss: 0.00297
+Epoch: 150, loss: 0.00269
+Epoch: 200, loss: 0.00250
+Epoch: 250, loss: 0.00229
+Epoch: 300, loss: 0.00214
+Epoch: 350, loss: 0.00201
+Epoch: 400, loss: 0.00184
+Epoch: 450, loss: 0.00165
+% positive:  0.5045662100456622
+% negative:  0.4954337899543379
+positive correct: 215/442  0.48642533936651583
+negative correct: 226/434  0.5207373271889401
+test accuracy: 0.5034246575342466
+stellar2h.csv
+Epoch: 0, loss: 0.13259
+Epoch: 50, loss: 0.00857
+Epoch: 100, loss: 0.00817
+Epoch: 150, loss: 0.00788
+Epoch: 200, loss: 0.00751
+Epoch: 250, loss: 0.00648
+Epoch: 300, loss: 0.00683
+Epoch: 350, loss: 0.00502
+Epoch: 400, loss: 0.00463
+Epoch: 450, loss: 0.00407
+% positive:  0.4851598173515982
+% negative:  0.5148401826484018
+positive correct: 218/425  0.5129411764705882
+negative correct: 233/451  0.516629711751663
+test accuracy: 0.5148401826484018
+
+input size:  6
+epochs:  1000
+learning rate:  0.01
+hidden size:  32
+look back:  6
+                     0         1
+0  binance-coin30m.csv  0.500000
+1  bitcoin-cash30m.csv  0.508542
+2       bitcoin30m.csv  0.511959
+3       cardano30m.csv  0.493451
+4     chainlink30m.csv  0.485763
+5      ethereum30m.csv  0.506549
+6      litecoin30m.csv  0.494021
+7        ripple30m.csv  0.497153
+8       stellar30m.csv  0.494305
+
+3]
+
+
+
+
+
+#current processed data in datatest and dataOriginaltest
+dir_path = "dataLSTM/"
+file_list = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
+#file_list = [f for f in listdir() if isfile(f)]
+
+file_endings = ["5m.csv", "hourly.csv", "daily.csv", "2h.csv", "30m.csv", "5mJune.csv", "15min.csv"]
+
+# FIXME: move to each fileending?
+file_ending = file_endings[4]
+
+binance-coin30m.csv
+Epoch: 0, loss: 0.06262
+Epoch: 50, loss: 0.02073
+Epoch: 100, loss: 0.02005
+Epoch: 150, loss: 0.01945
+Epoch: 200, loss: 0.01883
+Epoch: 250, loss: 0.01824
+Epoch: 300, loss: 0.01781
+Epoch: 350, loss: 0.01715
+Epoch: 400, loss: 0.01672
+Epoch: 450, loss: 0.01702
+Epoch: 500, loss: 0.01578
+Epoch: 550, loss: 0.01571
+Epoch: 600, loss: 0.01517
+Epoch: 650, loss: 0.01472
+Epoch: 700, loss: 0.01382
+Epoch: 750, loss: 0.01338
+Epoch: 800, loss: 0.01312
+Epoch: 850, loss: 0.01255
+Epoch: 900, loss: 0.01261
+Epoch: 950, loss: 0.01166
+% positive:  0.5062642369020501
+% negative:  0.49373576309794986
+positive correct: 906/1778  0.5095613048368954
+negative correct: 850/1734  0.49019607843137253
+test accuracy: 0.5
+bitcoin-cash30m.csv
+Epoch: 0, loss: 0.19232
+Epoch: 50, loss: 0.02518
+Epoch: 100, loss: 0.02339
+Epoch: 150, loss: 0.02217
+Epoch: 200, loss: 0.02150
+Epoch: 250, loss: 0.02081
+Epoch: 300, loss: 0.01992
+Epoch: 350, loss: 0.01890
+Epoch: 400, loss: 0.01783
+Epoch: 450, loss: 0.01778
+Epoch: 500, loss: 0.01545
+Epoch: 550, loss: 0.01427
+Epoch: 600, loss: 0.01338
+Epoch: 650, loss: 0.01214
+Epoch: 700, loss: 0.01091
+Epoch: 750, loss: 0.01029
+Epoch: 800, loss: 0.00938
+Epoch: 850, loss: 0.00885
+Epoch: 900, loss: 0.00850
+Epoch: 950, loss: 0.00779
+% positive:  0.5011389521640092
+% negative:  0.4988610478359909
+positive correct: 929/1760  0.5278409090909091
+negative correct: 857/1752  0.4891552511415525
+test accuracy: 0.5085421412300684
+bitcoin30m.csv
+Epoch: 0, loss: 0.01443
+Epoch: 50, loss: 0.00355
+Epoch: 100, loss: 0.00346
+Epoch: 150, loss: 0.00340
+Epoch: 200, loss: 0.00333
+Epoch: 250, loss: 0.00327
+Epoch: 300, loss: 0.00323
+Epoch: 350, loss: 0.00318
+Epoch: 400, loss: 0.00310
+Epoch: 450, loss: 0.00306
+Epoch: 500, loss: 0.00291
+Epoch: 550, loss: 0.00285
+Epoch: 600, loss: 0.00283
+Epoch: 650, loss: 0.00272
+Epoch: 700, loss: 0.00265
+Epoch: 750, loss: 0.00234
+Epoch: 800, loss: 0.00219
+Epoch: 850, loss: 0.00215
+Epoch: 900, loss: 0.00191
+Epoch: 950, loss: 0.00181
+% positive:  0.5316059225512528
+% negative:  0.46839407744874717
+positive correct: 954/1867  0.5109801821103375
+negative correct: 844/1645  0.5130699088145897
+test accuracy: 0.5119589977220956
+cardano30m.csv
+Epoch: 0, loss: 0.10264
+Epoch: 50, loss: 0.02199
+Epoch: 100, loss: 0.02108
+Epoch: 150, loss: 0.02077
+Epoch: 200, loss: 0.02049
+Epoch: 250, loss: 0.02003
+Epoch: 300, loss: 0.01896
+Epoch: 350, loss: 0.01806
+Epoch: 400, loss: 0.01794
+Epoch: 450, loss: 0.01510
+Epoch: 500, loss: 0.01367
+Epoch: 550, loss: 0.01283
+Epoch: 600, loss: 0.01157
+Epoch: 650, loss: 0.01073
+Epoch: 700, loss: 0.00993
+Epoch: 750, loss: 0.00931
+Epoch: 800, loss: 0.00909
+Epoch: 850, loss: 0.00846
+Epoch: 900, loss: 0.00798
+Epoch: 950, loss: 0.00762
+% positive:  0.5011389521640092
+% negative:  0.4988610478359909
+positive correct: 886/1760  0.5034090909090909
+negative correct: 847/1752  0.4834474885844749
+test accuracy: 0.4934510250569476
+chainlink30m.csv
+Epoch: 0, loss: 0.22301
+Epoch: 50, loss: 0.04320
+Epoch: 100, loss: 0.04153
+Epoch: 150, loss: 0.03983
+Epoch: 200, loss: 0.03817
+Epoch: 250, loss: 0.03628
+Epoch: 300, loss: 0.03409
+Epoch: 350, loss: 0.03230
+Epoch: 400, loss: 0.03233
+Epoch: 450, loss: 0.02915
+Epoch: 500, loss: 0.02780
+Epoch: 550, loss: 0.02899
+Epoch: 600, loss: 0.02550
+Epoch: 650, loss: 0.02424
+Epoch: 700, loss: 0.02388
+Epoch: 750, loss: 0.02243
+Epoch: 800, loss: 0.02192
+Epoch: 850, loss: 0.02031
+Epoch: 900, loss: 0.01963
+Epoch: 950, loss: 0.01897
+% positive:  0.4886104783599089
+% negative:  0.5113895216400911
+positive correct: 852/1716  0.4965034965034965
+negative correct: 854/1796  0.4755011135857461
+test accuracy: 0.4857630979498861
+ethereum30m.csv
+Epoch: 0, loss: 0.10657
+Epoch: 50, loss: 0.01216
+Epoch: 100, loss: 0.01161
+Epoch: 150, loss: 0.01140
+Epoch: 200, loss: 0.01125
+Epoch: 250, loss: 0.01111
+Epoch: 300, loss: 0.01096
+Epoch: 350, loss: 0.01075
+Epoch: 400, loss: 0.01051
+Epoch: 450, loss: 0.01020
+Epoch: 500, loss: 0.00988
+Epoch: 550, loss: 0.00960
+Epoch: 600, loss: 0.00892
+Epoch: 650, loss: 0.00845
+Epoch: 700, loss: 0.00802
+Epoch: 750, loss: 0.00767
+Epoch: 800, loss: 0.00720
+Epoch: 850, loss: 0.00678
+Epoch: 900, loss: 0.00657
+Epoch: 950, loss: 0.00606
+% positive:  0.5014236902050114
+% negative:  0.4985763097949886
+positive correct: 908/1761  0.5156161272004542
+negative correct: 871/1751  0.4974300399771559
+test accuracy: 0.5065489749430524
+litecoin30m.csv
+Epoch: 0, loss: 0.05585
+Epoch: 50, loss: 0.00806
+Epoch: 100, loss: 0.00794
+Epoch: 150, loss: 0.00783
+Epoch: 200, loss: 0.00762
+Epoch: 250, loss: 0.00731
+Epoch: 300, loss: 0.00704
+Epoch: 350, loss: 0.00675
+Epoch: 400, loss: 0.00640
+Epoch: 450, loss: 0.00621
+Epoch: 500, loss: 0.00582
+Epoch: 550, loss: 0.00558
+Epoch: 600, loss: 0.00529
+Epoch: 650, loss: 0.00507
+Epoch: 700, loss: 0.00490
+Epoch: 750, loss: 0.00471
+Epoch: 800, loss: 0.00519
+Epoch: 850, loss: 0.00439
+Epoch: 900, loss: 0.00434
+Epoch: 950, loss: 0.00416
+% positive:  0.49430523917995445
+% negative:  0.5056947608200456
+positive correct: 892/1736  0.5138248847926268
+negative correct: 843/1776  0.47466216216216217
+test accuracy: 0.4940205011389522
+ripple30m.csv
+Epoch: 0, loss: 0.00409
+Epoch: 50, loss: 0.00352
+Epoch: 100, loss: 0.00343
+Epoch: 150, loss: 0.00335
+Epoch: 200, loss: 0.00325
+Epoch: 250, loss: 0.00316
+Epoch: 300, loss: 0.00308
+Epoch: 350, loss: 0.00297
+Epoch: 400, loss: 0.00284
+Epoch: 450, loss: 0.00273
+Epoch: 500, loss: 0.00264
+Epoch: 550, loss: 0.00250
+Epoch: 600, loss: 0.00242
+Epoch: 650, loss: 0.00235
+Epoch: 700, loss: 0.00238
+Epoch: 750, loss: 0.00210
+Epoch: 800, loss: 0.00202
+Epoch: 850, loss: 0.00195
+Epoch: 900, loss: 0.00188
+Epoch: 950, loss: 0.00209
+% positive:  0.4755125284738041
+% negative:  0.5244874715261959
+positive correct: 831/1670  0.49760479041916167
+negative correct: 915/1842  0.496742671009772
+test accuracy: 0.4971526195899772
+stellar30m.csv
+Epoch: 0, loss: 0.14283
+Epoch: 50, loss: 0.00861
+Epoch: 100, loss: 0.00846
+Epoch: 150, loss: 0.00839
+Epoch: 200, loss: 0.00833
+Epoch: 250, loss: 0.00826
+Epoch: 300, loss: 0.00818
+Epoch: 350, loss: 0.00807
+Epoch: 400, loss: 0.00796
+Epoch: 450, loss: 0.00783
+Epoch: 500, loss: 0.00771
+Epoch: 550, loss: 0.00754
+Epoch: 600, loss: 0.00742
+Epoch: 650, loss: 0.00724
+Epoch: 700, loss: 0.00713
+Epoch: 750, loss: 0.00694
+Epoch: 800, loss: 0.00682
+Epoch: 850, loss: 0.01019
+Epoch: 900, loss: 0.00655
+Epoch: 950, loss: 0.00639
+% positive:  0.48832574031890663
+% negative:  0.5116742596810934
+positive correct: 840/1715  0.4897959183673469
+negative correct: 896/1797  0.4986087924318308
+test accuracy: 0.49430523917995445

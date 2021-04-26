@@ -1,0 +1,23 @@
+model = xgb.XGBClassifier(n_estimators=10000,max_depth=8, learning_rate=0.01,objective="binary:logistic", num_class=2, verbosity=1, n_jobs=4)
+2h
+binance-coin 0.48342857142857143
+bitcoin 0.512
+bitcoin-cash 0.52
+cardano 0.5017142857142857
+chainlink 0.472
+ethereum 0.5028571428571429
+litecoin 0.5074285714285715
+ripple 0.48914285714285716
+stellar 0.48228571428571426
+
+model = xgb.XGBClassifier(n_estimators=10000,max_depth=8, learning_rate=0.01,objective="binary:logistic", num_class=2, verbosity=1, n_jobs=4)
+30m
+binance-coin 0.4990476190476191
+bitcoin 0.4907742058208103
+bitcoin-cash 0.5055196041111534
+cardano 0.5007619047619047
+chainlink 0.5067735165044839
+ethereum 0.48925242533764507
+litecoin 0.5035298607136043
+ripple 0.5049123482951262
+stellar 0.49676313785224674
