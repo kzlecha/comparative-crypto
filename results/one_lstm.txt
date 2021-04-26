@@ -1,0 +1,7 @@
+test accuracy 	| 	training accuracy
+-------------------------------------
+tensor(0.4462) 	| 	 tensor(0.9379)
+
+Since there are 9 classes, random selection expects about 11% accuracy
+
+This result can likely be improved with some feature engineering and fien tuning 
