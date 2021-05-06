@@ -78,7 +78,7 @@ def reformat(dfPre):
 
     # shift the sentiments
     # df = shift_sentiments(dfPre)
-    df = DataFrame()
+    df = dfPre.copy(deep=True)
 
     # get the new prices
     df["mean_price_before"], df["std_price_before"] = get_price_data(dfPre)
@@ -111,6 +111,7 @@ new_df = assign_best_price(new_df)
 
 new_df = new_df.loc[new_df["best_crypto"] != ""]
 
-new_df.to_csv("dataBestCrypto/2h_price.csv", index=False)
+new_df.to_csv("dataLSTM/combined_cryptos/historical_sentiment_2h.csv", index=False)
 
-print(new_df.groupby("best_crypto")["best_crypto"].count())
+# print(new_df.groupby("best_crypto")["best_crypto"].count())
+print(new_df.columns)
